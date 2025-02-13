@@ -229,10 +229,3 @@ User > show_tokens
 
 ## 授權
 本專案採用 MIT License 授權。
-
-Citations:
-[1] https://img.shields.io/github/stars/your-repo-name.svg?style=flat&label=Stars
-[2] https://img.shields.io/github/license/your-repo-name.svg
-
----
-Perplexity の Eliot より: pplx.ai/share
