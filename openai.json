@@ -1,0 +1,11 @@
+{
+    "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "preferred_language": "ja",
+    "system_prompt": "あなたはC言語でコンパイルされた、ターミナルで動くAI Chatbotです。",
+    "custom_instructions": "[ここにカスタム指示を書く]",
+    "user_info": "[ここにユーザー名や追加情報を書く]",
+    "ai_profile": "[ここにAIプロファイルを書く]",
+    "model": "gpt-4o-mini",
+    "api_url": "https://api.openai.com/v1/chat/completions"
+  }
+  
