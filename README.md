@@ -12,6 +12,12 @@ OpenAI トークントラッカー CLI は、OpenAI API とのやり取りにお
 - `openai.json` による簡単な設定
 - 日本語、英語、中国語（繁体字）の3言語に対応
 
+## ファイル構成
+- `openai_core.c`: 純粋なチャットシステムのコア部分
+- `openai-cli-tool.c`: 本体
+
+`openai_core.c` は参考として添付しています。基本的には `openai-cli-tool.c` をコンパイルしてご使用ください。
+
 ## インストール
 ### 前提条件
 - **Linux/macOS/Windows（Windows の場合は WSL を推奨）**
@@ -90,6 +96,12 @@ OpenAI Token Tracker CLI is a lightweight command-line tool that helps users mon
 - Easy configuration via `openai.json`
 - Support for Japanese, English, and Traditional Chinese languages
 
+## File Structure
+- `openai_core.c`: Core part of the pure chat system
+- `openai-cli-tool.c`: Main application
+
+`openai_core.c` is attached for reference. Basically, please compile and use `openai-cli-tool.c`.
+
 ## Installation
 ### Prerequisites
 - **Linux/macOS/Windows (WSL recommended for Windows)**
@@ -167,6 +179,12 @@ OpenAI Token Tracker CLI 是一款輕量級的命令行工具，幫助用戶監�
 - 基於 **Clang** 和 **cJSON**，效能優化
 - 透過 `openai.json` 輕鬆配置
 - 支援日文、英文和繁體中文三種語言
+
+## 檔案結構
+- `openai_core.c`: 純粹聊天系統的核心部分
+- `openai-cli-tool.c`: 主要應用程式
+
+`openai_core.c` 僅作為參考附加。基本上，請編譯並使用 `openai-cli-tool.c`。
 
 ## 安裝方式
 ### 先決條件
