@@ -284,12 +284,12 @@ int main(void) {
         if (ai_profile == NULL)
             ai_profile = "";
     }
-    // モデル名設定：設定ファイル、環境変数、またはデフォルト ("o4-mini")
+    // モデル名設定：設定ファイル、環境変数、またはデフォルト ("gpt-4o-mini")
     char *model = config_model;
     if (!model) {
         model = getenv("OPENAI_MODEL");
         if (model == NULL)
-            model = "o4-mini";
+            model = "gpt-4o-mini";
     }
     // API URL の設定：設定ファイル、環境変数、またはデフォルト
     char *api_url = config_api_url;
