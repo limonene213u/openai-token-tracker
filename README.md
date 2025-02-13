@@ -53,7 +53,7 @@ export OPENAI_API_KEY="your-api-key"
 
 ### CLI の実行
 ```sh
-./openai_v2
+./openai-cli-tools
 ```
 
 ### 対話例
@@ -137,7 +137,7 @@ export OPENAI_API_KEY="your-api-key"
 
 ### Run the CLI
 ```sh
-./openai_v2
+./openai-cli-tools
 ```
 
 ### Example Interaction
@@ -221,7 +221,7 @@ export OPENAI_API_KEY="your-api-key"
 
 ### 執行 CLI
 ```sh
-./openai_v2
+./openai-cli-tools
 ```
 
 ### 互動示例
