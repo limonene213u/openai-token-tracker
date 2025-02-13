@@ -14,7 +14,7 @@ OpenAI トークントラッカー CLI は、OpenAI API とのやり取りにお
 
 ## ファイル構成
 - `openai_core.c`: 純粋なチャットシステムのコア部分
-- `openai-cli-tool.c`: 本体
+- `openai-cli-tool_v1.2.c`: 本体
 
 `openai_core.c` は参考として添付しています。基本的には `openai-cli-tool.c` をコンパイルしてご使用ください。
 
@@ -74,6 +74,36 @@ User > show_tokens
 
 言語設定に応じて、システムプロンプトと CLI の出力が変更されます。
 
+## タイムスタンプとタイムゾーンのサポート
+バージョン 1.2 では、ISO 8601形式のタイムスタンプと複数のタイムゾーンに対応しました。これにより、ログファイル内のトークン使用量に正確な日時情報が記録されます。
+
+- **ISO 8601形式**: タイムスタンプは `YYYY-MM-DDTHH:mm:ss±hh:mm` の形式で記録されます。
+  - 例: `2025-02-13T23:23:00+09:00`（日本時間）
+- **対応するタイムゾーン**:
+  - 日本 (JST): +09:00
+  - 台湾 (CST): +08:00
+  - UTC (協定世界時): Z または +00:00
+  - アメリカ:
+    - 東部時間 (ET): -05:00（標準時）/ -04:00（夏時間）
+    - 中部時間 (CT): -06:00（標準時）/ -05:00（夏時間）
+    - 山岳部時間 (MT): -07:00（標準時）/ -06:00（夏時間）
+    - 太平洋時間 (PT): -08:00（標準時）/ -07:00（夏時間）
+
+### タイムゾーンの設定方法
+タイムゾーンは、設定ファイル `openai.json` または環境変数 `TIMEZONE` を使用して設定できます。
+
+#### 設定例 (`openai.json`)
+```json
+{
+  "timezone": "JST"
+}
+```
+
+#### 環境変数を使用する場合
+```sh
+export TIMEZONE="UTC"
+```
+
 ## コントリビューション
 プルリクエストを歓迎します！問題を発見した場合は、GitHub で Issue を開いてください。
 
@@ -98,7 +128,7 @@ OpenAI Token Tracker CLI is a lightweight command-line tool that helps users mon
 
 ## File Structure
 - `openai_core.c`: Core part of the pure chat system
-- `openai-cli-tool.c`: Main application
+- `openai-cli-tool_v1.2.c`: Main application
 
 `openai_core.c` is attached for reference. Basically, please compile and use `openai-cli-tool.c`.
 
@@ -158,6 +188,36 @@ You can set the preferred language in the `openai.json` file using the `preferre
 
 The system prompt and CLI output will change according to the language setting.
 
+## Timestamp and Timezone Support
+Version 1.2 introduces support for ISO 8601 timestamps and multiple timezones, ensuring that token usage logs include accurate date and time information.
+
+- **ISO 8601 Format**: Timestamps are recorded in the format `YYYY-MM-DDTHH:mm:ss±hh:mm`.
+  - Example: `2025-02-13T23:23:00+09:00` (Japan Standard Time)
+- **Supported Timezones**:
+  - Japan (JST): +09:00
+  - Taiwan (CST): +08:00
+  - UTC (Coordinated Universal Time): Z or +00:00
+  - United States:
+    - Eastern Time (ET): -05:00 (Standard) / -04:00 (Daylight Saving)
+    - Central Time (CT): -06:00 (Standard) / -05:00 (Daylight Saving)
+    - Mountain Time (MT): -07:00 (Standard) / -06:00 (Daylight Saving)
+    - Pacific Time (PT): -08:00 (Standard) / -07:00 (Daylight Saving)
+
+### How to Configure the Timezone
+You can configure the timezone using the `openai.json` file or the `TIMEZONE` environment variable.
+
+#### Example (`openai.json`)
+```json
+{
+  "timezone": "JST"
+}
+```
+
+#### Using an Environment Variable
+```sh
+export TIMEZONE="UTC"
+```
+
 ## Contributions
 Pull requests are welcome! If you encounter any issues, feel free to open an issue on GitHub.
 
@@ -182,7 +242,7 @@ OpenAI Token Tracker CLI 是一款輕量級的命令行工具，幫助用戶監�
 
 ## 檔案結構
 - `openai_core.c`: 純粹聊天系統的核心部分
-- `openai-cli-tool.c`: 主要應用程式
+- `openai-cli-tool_v1.2.c`: 主要應用程式
 
 `openai_core.c` 僅作為參考附加。基本上，請編譯並使用 `openai-cli-tool.c`。
 
@@ -241,6 +301,38 @@ User > show_tokens
 - `zh`：繁體中文
 
 系統提示和 CLI 輸出將根據語言設定而改變。
+
+### 繁體中文（台灣）
+
+## 時間戳記與時區支援
+版本 1.2 新增了對 ISO 8601 格式的時間戳記與多個時區的支援，確保 Token 使用日誌包含準確的日期和時間資訊。
+
+- **ISO 8601 格式**：時間戳記以 `YYYY-MM-DDTHH:mm:ss±hh:mm` 格式記錄。
+  - 範例：`2025-02-13T23:23:00+09:00`（日本標準時間）
+- **支援的時區**：
+  - 日本 (JST)：+09:00
+  - 台灣 (CST)：+08:00
+  - UTC（協調世界時）：Z 或 +00:00
+  - 美國：
+    - 東部時間 (ET)：-05:00（標準時間）/ -04:00（夏令時間）
+    - 中部時間 (CT)：-06:00（標準時間）/ -05:00（夏令時間）
+    - 山區時間 (MT)：-07:00（標準時間）/ -06:00（夏令時間）
+    - 太平洋時間 (PT)：-08:00（標準時間）/ -07:00（夏令時間）
+
+### 如何設定時區
+您可以使用設定檔案 `openai.json` 或環境變數 `TIMEZONE` 設定時區。
+
+#### 設定範例 (`openai.json`)
+```json
+{
+  "timezone": "JST"
+}
+```
+
+#### 使用環境變數設定
+```sh
+export TIMEZONE="UTC"
+```
 
 ## 貢獻方式
 歡迎 PR！若發現問題，請在 GitHub 上提交 Issue。

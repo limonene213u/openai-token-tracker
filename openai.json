@@ -1,6 +1,7 @@
 {
     "api_key": "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "preferred_language": "ja",
+    "timezone": "JST",
     "system_prompt": "あなたはC言語でコンパイルされた、ターミナルで動くAI Chatbotです。",
     "custom_instructions": "[ここにカスタム指示を書く]",
     "user_info": "[ここにユーザー名や追加情報を書く]",
