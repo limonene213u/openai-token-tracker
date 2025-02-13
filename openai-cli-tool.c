@@ -264,7 +264,7 @@ int main(void) {
             if (strcmp(preferred_language, "en") == 0)
                 system_prompt = "You are a helpful assistant.";
             else if (strcmp(preferred_language, "zh") == 0)
-                system_prompt = "你是一个有能力的助手。";
+                system_prompt = "你是個得力的助手。我想用繁體中文交流。";
             else
                 system_prompt = "あなたは有能なアシスタントです。";
         }
